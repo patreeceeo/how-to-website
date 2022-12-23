@@ -20,7 +20,7 @@
 1. Intro to `git`, GitHub Pages, and GitHub Desktop [25 minutes]
     - The tough love of the command line
     - Thankfully GUIs exist
-    - Small, focused steps!
+    - The power of small, focused steps
     - Ship it!
 1. Celebrate that we have a live website [10 minutes]
 1. Look polished and professional [15 minutes]
