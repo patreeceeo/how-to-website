@@ -31,6 +31,7 @@
     - Playing Dr Frankenstein with JavaScript
     - Ways to avoid copying and pasting the same code over and over again
     - writing with Markdown
+    - Using more than your OS' fonts
   
 
 
