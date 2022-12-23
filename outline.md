@@ -1,6 +1,6 @@
 # DIY websites for creatives: Workshop outline
 
-1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/)
+1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/) [10 minutes]
 1. The how and why of The Web as it is and ought to be [15 minutes]
     - a new form of literacy?
     - advantages of DIY on The Web (creative freedom, lower cost, owning your stuff)
