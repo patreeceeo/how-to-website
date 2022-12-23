@@ -1,17 +1,17 @@
-# DIY Web Workshop Outline
+# DIY websites for creatives: Workshop outline
 
 1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/)
 1. The how and why of The Web as it is and ought to be [15 minutes]
     - a new form of literacy?
-    - advantages of DIY on The Web
+    - advantages of DIY on The Web (creative freedom, lower cost, owning your stuff)
     - the "architecture" of the Web
-    - finding a firm place to stand despite the only constant being change
+    - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
     - the computer as a collaborator
       - rapid prototyping
       - let the machine do what it's good at so you can focus on being creative
     - the Web is for everyone, eveywhere, on every device!
 1. Our workbench: intro to VSCode and Chrome devtools [15 minutes]
-1. Intro to HTML: Tags, elements and the DOM, oh my! [15 minutes]
+1. Intro to HTML: Tags, elements and the DOM, Oh my! [15 minutes]
     - HTML boilerplate
     - How to have multiple pages on your website? (if folks are interested)
 1. The style of elements: intro to CSS [15 minutes]
