@@ -1,5 +1,4 @@
 
-const root = document.documentElement
 const positionTypes = ["absolute", "relative", "fixed"]
 const units = ["px", "v"]
 const unitClasses = units.map((u) => `grabby-hand-use-${u}`)
@@ -61,10 +60,10 @@ function handleMouseMove(e) {
   if (_activeEl !== null) {
     const pxw = e.clientX - _activeElOffsetX
     const pxh = e.clientY - _activeElOffsetY
-    root.style.setProperty('--grabby-hand-pxw', pxw)
-    root.style.setProperty('--grabby-hand-pxh', pxh)
-    root.style.setProperty('--grabby-hand-vw', pxToVw(pxw))
-    root.style.setProperty('--grabby-hand-vh', pxToVh(pxh))
+    _activeEl.style.setProperty('--grabby-hand-pxw', pxw)
+    _activeEl.style.setProperty('--grabby-hand-pxh', pxh)
+    _activeEl.style.setProperty('--grabby-hand-vw', pxToVw(pxw))
+    _activeEl.style.setProperty('--grabby-hand-vh', pxToVh(pxh))
   }
 }
 
