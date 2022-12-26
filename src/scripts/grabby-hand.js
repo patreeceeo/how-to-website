@@ -60,8 +60,8 @@ function handleMouseMove(e) {
   if (_activeEl !== null) {
     const pxw = e.clientX - _activeElOffsetX
     const pxh = e.clientY - _activeElOffsetY
-    _activeEl.style.setProperty('--grabby-hand-pxw', pxw)
-    _activeEl.style.setProperty('--grabby-hand-pxh', pxh)
+    _activeEl.style.setProperty('--grabby-hand-pxw', `${pxw}px`)
+    _activeEl.style.setProperty('--grabby-hand-pxh', `${pxh}px`)
     _activeEl.style.setProperty('--grabby-hand-vw', pxToVw(pxw))
     _activeEl.style.setProperty('--grabby-hand-vh', pxToVh(pxh))
   }
