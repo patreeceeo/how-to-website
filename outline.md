@@ -8,7 +8,7 @@
     - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
     - the computer as a collaborator
       - rapid prototyping
-      - let the machine do what it's good at so you can focus on being creative
+      - Use tools: let the machine do machine stuff good at so you can focus on being creative
     - the Web is for everyone, eveywhere, on every device!
     - Start simple and add a little at a time
 1. Our workbench: intro to VSCode and Chrome devtools [15 minutes]
@@ -20,6 +20,7 @@
     - fluid layout
     - scales
     - grabby hand tool
+    - colorist tool
 1. Intro to `git`, GitHub Pages, and GitHub Desktop [25 minutes]
     - The tough love of the command line
     - Thankfully GUIs exist
