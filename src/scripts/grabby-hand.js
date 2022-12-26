@@ -71,7 +71,7 @@
 
   /** @param el {Element}
     * @typedef {{x: number, y: number}} Coords
-    * @return Coords
+    * @return {Coords}
     */
   function getAbsoluteRect(el) {
     const { x, y } = el.getBoundingClientRect();
