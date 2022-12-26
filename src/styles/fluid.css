@@ -1,4 +1,4 @@
-/* TODO https://css-tricks.com/simplified-fluid-typography/ */
+/* Inspired by https://css-tricks.com/simplified-fluid-typography/ */
 :root {
   --fluid-text-min: 14;
   --fluid-text-max: 28;

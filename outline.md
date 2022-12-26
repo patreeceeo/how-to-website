@@ -17,6 +17,9 @@
     - How to have multiple pages on your website? (if folks are interested)
 1. The style of elements: intro to CSS [15 minutes]
     - normalize/reset
+    - fluid layout
+    - scales
+    - grabby hand tool
 1. Intro to `git`, GitHub Pages, and GitHub Desktop [25 minutes]
     - The tough love of the command line
     - Thankfully GUIs exist
@@ -27,6 +30,7 @@
     - Get a custom domain (it costs $$)
     - Look legit with `https` (free in itself, but requires a custom domain)
 1. Whatever else YOU wanna learn about [whatever time remains]
+    - integrate store/donation stuff
     - Embedding video/audio
     - Playing Dr Frankenstein with JavaScript
     - Ways to avoid copying and pasting the same code over and over again
