@@ -1,0 +1,13 @@
+/* TODO https://css-tricks.com/simplified-fluid-typography/ */
+:root {
+  --fluid-text-min: 14;
+  --fluid-text-max: 28;
+  --fluid-text-min-width: 640;
+  --fluid-text-max-width: 1025;
+
+  --fluid-text-slope: calc((var(--fluid-text-max) - var(--fluid-text-min)) / (var(--fluid-text-max-width) - var(--fluid-text-min-width)));
+
+  --fluid-text-intercept: calc(var(--fluid-text-max) - (var(--fluid-text-slope) * var(--fluid-text-max-width)));
+
+  --fluid-unit: clamp(calc(var(--fluid-text-min) * 1px), calc(var(--fluid-text-slope) * 100vw + var(--fluid-text-intercept) * 1px), calc(var(--fluid-text-max) * 1px));
+}

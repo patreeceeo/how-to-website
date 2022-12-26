@@ -1,0 +1,10 @@
+:root {
+  --modular-scale: 1.4;
+  --scale-0: 100%;
+  --scale-1: calc(var(--scale-0) * var(--modular-scale));
+  --scale-2: calc(var(--scale-1) * var(--modular-scale));
+  --scale-3: calc(var(--scale-2) * var(--modular-scale));
+  --scale-4: calc(var(--scale-3) * var(--modular-scale));
+  --scale-5: calc(var(--scale-4) * var(--modular-scale));
+  --scale-6: calc(var(--scale-5) * var(--modular-scale));
+}
