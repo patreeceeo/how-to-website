@@ -16,11 +16,11 @@ window.addEventListener("load", handleLoad);
 window.addEventListener("mousemove", handleMouseMove);
 window.addEventListener("mouseup", handleMouseUp);
 
-console.info("%cGrabby hand: Hello! Grab any element with the marching ants to move it.", consoleStyleInfo)
 
 // TODO arrow keys to adjust
 // TODO rotation and scale
 // TODO change z-index
+// TODO snapping, guides and grids
 
 createInlineStyleSheet(`
 [x-grabby-hand] {
@@ -42,24 +42,11 @@ createInlineStyleSheet(`
   left: var(--grabby-hand-vw);
   top: var(--grabby-hand-vh);
 }
-
-@keyframes marching-ants { to { background-position: 100% 100% } }
-
-.MarchingAnts {
-  --marching-ants-opacity: 0.33;
-  box-sizing: content-box;
-	border: 1px solid transparent;
-	background: linear-gradient(white, white) padding-box,
-	            repeating-linear-gradient(-45deg, rgba(0, 0, 0, var(--marching-ants-opacity)) 0, rgba(0, 0, 0, var(--marching-ants-opacity)) 25%, rgba(255, 255, 255, var(--marching-ants-opacity)) 0, rgba(255, 255, 255, var(--marching-ants-opacity)) 50%) 0 / 12px 12px;
-	animation: marching-ants 6s linear infinite;
-}
-.MarchingAnts.MarchingAnts--active {
-  --marching-ants-opacity: 1;
-}
 `)
 
 function handleLoad() {
   const els = document.querySelectorAll("[x-grabby-hand]");
+  console.info("%cGrabby hand: Hello! Grab any of the below elements to move it.%o", consoleStyleInfo, els)
 
   for (const el of els) {
     addElement(el)
@@ -135,7 +122,6 @@ function hasClass(el, clazz) {
   */
 function addElement(el) {
   el.addEventListener("mousedown", handleMouseDown);
-  el.classList.add('MarchingAnts')
   if(!positionTypes.some(hasPositionType.bind(null, el))) {
     console.warn("%o%cGrabby hand: You're using me incorrectly with the above element! It does not have one of the following position types: %o", el, consoleStyleWarning, positionTypes)
   }
@@ -175,7 +161,6 @@ function setActiveElement(el) {
   _activeEl = el;
   _activeEl.setAttribute('draggable', false)
   document.body.classList.add('grabby-hand-grabbing');
-  _activeEl.classList.add('MarchingAnts--active');
   _mostRecentActiveEl = _activeEl
 }
 
@@ -187,7 +172,6 @@ function setInitialOffset(x, y) {
 
 function clearActiveElement() {
   document.body.classList.remove('grabby-hand-grabbing');
-  document.body.classList.remove('MarchingAnts--active');
   if(_activeEl !== null) {
     _activeEl.removeAttribute('draggable')
     _activeEl = null;
