@@ -1,3 +1,7 @@
+// TODO arrow keys to adjust?
+// TODO rotation, scale, skew
+// TODO change z-index
+// TODO snapping, guides and grids
 (() => {
   const positionTypes = ["absolute", "relative", "fixed"]
   const units = ["px", "v"]
@@ -16,12 +20,6 @@
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("mouseup", handleMouseUp);
 
-
-  // TODO arrow keys to adjust
-  // TODO rotation and scale
-  // TODO change z-index
-  // TODO snapping, guides and grids
-
   createInlineStyleSheet(`
   [x-grabby-hand] {
     cursor: grab;
@@ -33,12 +31,13 @@
   .grabby-hand-grabbing [x-grabby-hand] {
     cursor: grabbing;
   }
-  /* TODO support using this class higher up in tree */
-  .grabby-hand-use-px {
+  .grabby-hand-use-px [x-grabby-hand],
+  [x-grabby-hand].grabby-hand-use-px {
     left: var(--grabby-hand-pxw);
     top: var(--grabby-hand-pxh);
   }
-  .grabby-hand-use-v {
+  .grabby-hand-use-v [x-grabby-hand],
+  [x-grabby-hand].grabby-hand-use-v {
     left: var(--grabby-hand-vw);
     top: var(--grabby-hand-vh);
   }
