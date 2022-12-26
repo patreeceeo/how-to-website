@@ -21,6 +21,7 @@
     - scales
     - grabby hand tool
     - colorist tool
+    - drawing tool
 1. Intro to `git`, GitHub Pages, and GitHub Desktop [25 minutes]
     - The tough love of the command line
     - Thankfully GUIs exist
