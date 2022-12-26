@@ -1,16 +1,16 @@
 # DIY websites for creatives: Workshop outline
 
 1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/) [10 minutes]
-1. The how and why of The Web as it is and ought to be [15 minutes]
-    - a new form of literacy?
-    - advantages of DIY on The Web (creative freedom, lower cost, owning your stuff, faster loading, etc)
-    - the "architecture" of the Web
+1. The what, why, how and why of The DIY Web [15 minutes]
+    - why #1 -- personal advantages -- creative freedom, lower cost, owning your stuff, faster loading, etc)
+    - why #2 -- societal advantages -- more interesting, unique, unfiltered websites
+    - why #3 -- my motivation -- aside from the above, I offer consulting with a discounted rate for friends, if you want/need it; the last you'll hear about it today.
+    - Brief interlude on the "architecture" of the Web
     - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
-    - the computer as a collaborator
-      - rapid prototyping
-      - Use tools: let the machine do machine stuff good at so you can focus on being creative
-    - the Web is for everyone, eveywhere, on every device!
-    - Start simple and add a little at a time
+    - the computer is a meta-tool: let the machine do machine stuff good at so you can focus on being creative
+    - the Web is for everyone, everywhere, on every device!
+    - There's an exception to every rule, including this one.
+    - KISS: Keep it simple, Sisyphus!
 1. Our workbench: intro to VSCode and Chrome devtools [15 minutes]
 1. Intro to HTML: Tags, elements and the DOM, Oh my! [15 minutes]
     - HTML boilerplate
@@ -19,6 +19,7 @@
     - normalize/reset
     - fluid layout
     - scales
+    - general purpose document manipulation tool (can download current DOM tree as HTML, duplicate active element, delete active element, live-edit text fields with content-editable API)
     - grabby hand tool
     - colorist tool
     - drawing tool
