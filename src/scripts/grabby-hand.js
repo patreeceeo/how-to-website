@@ -11,6 +11,7 @@
 // TODO rotation, scale, skew
 // TODO change z-index
 // TODO snapping, guides and grids
+// TODO show warning message if used in http[s] location
 (() => {
   const positionTypes = ["absolute", "relative", "fixed"]
   const units = ["px", "v"]
