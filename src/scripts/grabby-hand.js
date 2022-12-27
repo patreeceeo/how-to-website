@@ -14,8 +14,6 @@
 // TODO show warning message if used in http[s] location
 (() => {
   const positionTypes = ["absolute", "relative", "fixed"]
-  const units = ["px", "v"]
-  const unitClasses = units.map((u) => `grabby-hand-use-${u}`)
   const consoleStyleInfo = "font-size: 1rem; background-color: skyblue; padding: 0.5rem; border-radius: 0.5rem"
   const consoleStyleWarning = "font-size: 1rem;"
 
@@ -29,6 +27,13 @@
   window.addEventListener("load", handleLoad);
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("mouseup", handleMouseUp);
+
+  // TODO remove/ignore when generating HTML from DOM
+  const em = document.createElement("div")
+  em.id = "grabby-hand-em"
+  em.style.width = "1em"
+  em.style.visibility = "hidden"
+  document.body.append(em)
 
   createInlineStyleSheet(`
   [x-grabby-hand] {
@@ -50,6 +55,11 @@
   [x-grabby-hand].grabby-hand-use-v {
     left: var(--grabby-hand-vw);
     top: var(--grabby-hand-vh);
+  }
+  .grabby-hand-use-em [x-grabby-hand],
+  [x-grabby-hand].grabby-hand-use-em {
+    left: var(--grabby-hand-emw);
+    top: var(--grabby-hand-emh);
   }
   `)
 
@@ -110,6 +120,13 @@
   function pxToVh(px) {
     return `${px / window.innerHeight * 100}vh`
   }
+  /** @param px {number}
+    * @return string
+    */
+  function pxToEm(px) {
+    const {width: em} = document.getElementById("grabby-hand-em").getBoundingClientRect()
+    return `${px / em}em`
+  }
 
   /** @param el {Element}
     * @param type {string}
@@ -134,9 +151,6 @@
     if(!positionTypes.some(hasPositionType.bind(null, el))) {
       console.warn("%o%cGrabby hand: You're using me incorrectly with the above element! It does not have one of the following position types: %o", el, consoleStyleWarning, positionTypes)
     }
-    if(!unitClasses.some(hasClass.bind(null, el))) {
-      console.warn("%o%cGrabby hand: You're using me incorrectly with the above element! It should use one of the following classes: %o", el, consoleStyleWarning, unitClasses)
-    }
   }
 
   /**
@@ -160,6 +174,8 @@
       _activeEl.style.setProperty('--grabby-hand-pxh', `${y}px`)
       _activeEl.style.setProperty('--grabby-hand-vw', pxToVw(x))
       _activeEl.style.setProperty('--grabby-hand-vh', pxToVh(y))
+      _activeEl.style.setProperty('--grabby-hand-emw', pxToEm(x))
+      _activeEl.style.setProperty('--grabby-hand-emh', pxToEm(y))
     }
   }
 
