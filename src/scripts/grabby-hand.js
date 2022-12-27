@@ -15,6 +15,7 @@
 // TODO change z-index
 // TODO snapping, guides and grids
 // TODO show warning message if used in http[s] location
+// TODO are IIFEs necessary?
 (() => {
   const positionTypes = ["absolute", "relative", "fixed"]
   const consoleStyleInfo = "font-size: 1rem; background-color: skyblue; padding: 0.5rem; border-radius: 0.5rem"
