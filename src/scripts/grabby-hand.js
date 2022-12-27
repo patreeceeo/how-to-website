@@ -1,6 +1,10 @@
+// TODO rename to moveTool
+// TODO add all block elements by default?
 // TODO move this to its own repo?
 // TODO add removeElement API method
-// TODO are there better names than "addElement" and "removeElement"?
+// TODO are there better names than "addElement" and "removeElement"? rename "removeElement" to "lock" or "exclude"?
+// TODO add method to list current movable elements
+// TODO add lock{Position|Rotation|Scale}OfElement
 // TODO use API methods instead of unit classes
 // TODO add method to get active element
 // TODO use addElement method instead of x-grabby-hand attribute
@@ -34,6 +38,7 @@
   em.style.visibility = "hidden"
   document.body.append(em)
 
+  // TODO remove/ignore when generating HTML from DOM
   createInlineStyleSheet(`
   [x-grabby-hand] {
     cursor: grab;
