@@ -1,3 +1,11 @@
+// TODO move this to its own repo?
+// TODO add removeElement API method
+// TODO are there better names than "addElement" and "removeElement"?
+// TODO use API methods instead of unit classes
+// TODO add method to get active element
+// TODO use addElement method instead of x-grabby-hand attribute
+// TODO use $0 instead with addElement
+// TODO put styles into dynamically load CSS file
 // TODO arrow keys to adjust?
 // TODO rotation, scale, skew
 // TODO change z-index
