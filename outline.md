@@ -2,9 +2,9 @@
 
 1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/) [10 minutes]
 1. The what, why, how and why of The DIY Web [15 minutes]
-    - why #1 -- personal advantages -- creative freedom, lower cost, owning your stuff, faster loading, etc)
-    - why #2 -- societal advantages -- more interesting, unique, unfiltered websites
-    - why #3 -- my motivation -- Teaching is fun. I believe in this. I want to help make the Web a better place. I think there might be (a)vocational opportunities down this path.
+    - why #1 -- personal advantages -- creative freedom, lower cost, owning your creations, websites that download faster...
+    - why #2 -- societal advantages -- more interesting, unique, unfiltered websites; potential for mutual aid, community organizing and distribution of information outside of corporate or government controlled channels; more money stays within community rather than going to tech giants; weaken the technocracy...
+    - why #3 -- my motivation -- Teaching is fun. I believe in this. I want to help make the Web a better place. I also think there might be (a)vocational opportunities down this path; skill/labor exchange...
     - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
     - the computer is a meta-tool: let the machine do machine stuff good at so you can focus on being creative
     - the Web is for everyone, everywhere, on every device!
