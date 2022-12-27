@@ -37,6 +37,7 @@
   em.id = "grabby-hand-em"
   em.style.width = "1em"
   em.style.visibility = "hidden"
+  em.setAttribute('x-exclude-from-exported-html', true)
   document.body.append(em)
 
   // TODO remove/ignore when generating HTML from DOM
@@ -109,6 +110,7 @@
     const style = document.createElement(`style`);
 
     style.innerText = css;
+    style.setAttribute('x-exclude-from-exported-html', true)
 
     document.querySelector(`head`).append(style);
   };
