@@ -4,7 +4,7 @@
 1. The what, why, how and why of The DIY Web [15 minutes]
     - why #1 -- personal advantages -- creative freedom, lower cost, owning your stuff, faster loading, etc)
     - why #2 -- societal advantages -- more interesting, unique, unfiltered websites
-    - why #3 -- my motivation -- aside from the above, I offer consulting with a discounted rate for friends, if you want/need it; the last you'll hear about it today.
+    - why #3 -- my motivation -- teaching is fun, and though I do maybe aspire to eventually sell a product or service based on this, I'm not going into that today.
     - Brief interlude on the "architecture" of the Web
     - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
     - the computer is a meta-tool: let the machine do machine stuff good at so you can focus on being creative
