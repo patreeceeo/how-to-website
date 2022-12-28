@@ -2,7 +2,7 @@
 // TODO add all block elements by default?
 // TODO move this to its own repo?
 // TODO add removeElement API method
-// TODO are there better names than "addElement" and "removeElement"? rename "removeElement" to "lock" or "exclude"?
+// TODO are there better names than "addElement" and "removeElement"? "unlock" and "lock" ?
 // TODO add method to list current movable elements
 // TODO add lock{Position|Rotation|Scale}OfElement
 // TODO use API methods instead of unit classes
@@ -171,18 +171,40 @@
       setPositionInPx(pxw, pxh)
     }
   }
+
+  /**
+    * @template T
+    * @typedef {{px: T, v: T, em: T}} UnitRecord<T>
+    */
+
+
+  /** @type {UnitRecord<(x: number) => string>}
+    */
+  const _xFunctionByUnit = {
+    px: (x) => `${x}px`,
+    v: (x) => pxToVw(x),
+    em: (x) => pxToEm(x)
+  }
+  /** @type {UnitRecord<(y: number) => string>}
+    */
+  const _yFunctionByUnit = {
+    px: (y) => `${y}px`,
+    v: (y) => pxToVh(y),
+    em: (y) => pxToEm(y)
+  }
+
+  /** @type {keyof UnitRecord<any>} */
+  let _activeUnits = "em"
+
   /**
     * @param x {number}
     * @param y {number}
     */
   function setPositionInPx(x, y) {
     if (_activeEl !== null) {
-      _activeEl.style.setProperty('--grabby-hand-pxw', `${x}px`)
-      _activeEl.style.setProperty('--grabby-hand-pxh', `${y}px`)
-      _activeEl.style.setProperty('--grabby-hand-vw', pxToVw(x))
-      _activeEl.style.setProperty('--grabby-hand-vh', pxToVh(y))
-      _activeEl.style.setProperty('--grabby-hand-emw', pxToEm(x))
-      _activeEl.style.setProperty('--grabby-hand-emh', pxToEm(y))
+      const style = _activeEl.style
+      style.setProperty('left', _xFunctionByUnit[_activeUnits](x))
+      style.setProperty('top', _yFunctionByUnit[_activeUnits](y))
     }
   }
 
@@ -236,11 +258,17 @@
     copy(getStyle())
   }
 
+  /** @param units {typeof _activeUnits} */
+  function setActiveUnits(units) {
+    _activeUnits = units
+  }
+
   window.grabbyHand = {
     getStyle,
     copyStyle,
     setActiveElement,
     clearActiveElement,
     setPositionInPx,
+    setActiveUnits,
   }
 })();
