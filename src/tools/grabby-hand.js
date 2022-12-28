@@ -21,9 +21,9 @@
   const consoleStyleInfo = "font-size: 1rem; background-color: skyblue; padding: 0.5rem; border-radius: 0.5rem"
   const consoleStyleWarning = "font-size: 1rem;"
 
-  /** @type {Element | null} */
+  /** @type {HTMLElement | null} */
   let _activeEl = null;
-  /** @type {Element | null} */
+  /** @type {HTMLElement | null} */
   let _mostRecentActiveEl = null;
   let _activeElInitOffsetX = 0;
   let _activeElInitOffsetY = 0;
@@ -37,7 +37,7 @@
   em.id = "grabby-hand-em"
   em.style.width = "1em"
   em.style.visibility = "hidden"
-  em.setAttribute('x-exclude-from-exported-html', true)
+  em.setAttribute('x-exclude-from-exported-html', "true")
   document.body.append(em)
 
   // TODO remove/ignore when generating HTML from DOM
@@ -74,7 +74,9 @@
     console.info("%cGrabby hand: Hello! Grab any of the below elements to move it.%o", consoleStyleInfo, els)
 
     for (const el of els) {
-      addElement(el)
+      if(el instanceof HTMLElement) {
+        addElement(el)
+      }
     }
   }
 
@@ -87,15 +89,19 @@
   /** @param e {MouseEvent}
     */
   function handleMouseDown(e) {
-    setActiveElement(e.target)
-    setInitialOffset(e.clientX, e.clientY)
+    if(e.target !== null) {
+      /** @type {HTMLElement} */
+      const el = /** @type {any} */(e.target)
+      setActiveElement(el)
+      setInitialOffset(e.clientX, e.clientY)
+    }
   }
 
   function handleMouseUp() {
     clearActiveElement()
   }
 
-  /** @param el {Element}
+  /** @param el {HTMLElement}
     * @typedef {{x: number, y: number}} Coords
     * @return {Coords}
     */
@@ -110,9 +116,10 @@
     const style = document.createElement(`style`);
 
     style.innerText = css;
-    style.setAttribute('x-exclude-from-exported-html', true)
+    style.setAttribute('x-exclude-from-exported-html', "true");
 
-    document.querySelector(`head`).append(style);
+    const head = document.querySelector(`head`);
+    /** @type HTMLElement */(head).append(style);
   };
 
   /** @param px {number}
@@ -131,7 +138,8 @@
     * @return string
     */
   function pxToEm(px) {
-    const {width: em} = document.getElementById("grabby-hand-em").getBoundingClientRect()
+    const refEl = document.getElementById("grabby-hand-em")
+    const {width: em} = /** @type HTMLElement */(refEl).getBoundingClientRect()
     return `${px / em}em`
   }
 
@@ -151,7 +159,7 @@
   }
 
 
-  /** @param el {Element}
+  /** @param el {HTMLElement}
     */
   function addElement(el) {
     el.addEventListener("mousedown", handleMouseDown);
@@ -209,17 +217,20 @@
   }
 
   /**
-    * @param el {Element}
+    * @param el {HTMLElement}
     */
   function setActiveElement(el) {
     _activeEl = el;
-    _activeEl.setAttribute('draggable', false)
+    _activeEl.setAttribute('draggable', "false")
     document.body.classList.add('grabby-hand-grabbing');
     _mostRecentActiveEl = _activeEl
   }
 
+  /** @param x {number}
+    * @param y {number}
+    */
   function setInitialOffset(x, y) {
-    const { x: elX, y: elY } = getAbsoluteRect(_activeEl);
+    const { x: elX, y: elY } = getAbsoluteRect(/** @type {HTMLElement} */(_activeEl));
     _activeElInitOffsetX = x - elX;
     _activeElInitOffsetY = y - elY;
   }
@@ -233,7 +244,7 @@
   }
 
   /**
-    * @param el {Element}
+    * @param el {HTMLElement}
     * @param prop {string}
     * @return string
     */
@@ -252,18 +263,19 @@
       return `left: ${pxw}; left: ${vw}; top: ${pxh}; top: ${vh};`
     } else {
       console.warn("%cGrabby hand: You need to grab an element first.", consoleStyleWarning)
+      return ""
     }
   }
   function copyStyle() {
     copy(getStyle())
   }
 
-  /** @param units {typeof _activeUnits} */
+  /** @param units {keyof UnitRecord<any>} */
   function setActiveUnits(units) {
     _activeUnits = units
   }
 
-  window.grabbyHand = {
+  /** @type any */(window).grabbyHand = {
     getStyle,
     copyStyle,
     setActiveElement,
