@@ -15,6 +15,10 @@
     - HTML boilerplate
     - general purpose document manipulation tool (can download current DOM tree as HTML, duplicate active element, delete active element, live-edit text fields with content-editable API)
     - How to have multiple pages on your website?
+    - An open question: How could the DIY Web, as an alternative to Twitter and other social media, better handle hate speech and disinformation?
+      - Lack of notifications that steal your attention is perhaps a feature.
+      - It takes more effort to put stuff out there this way. Many trolls probably won't bother.
+      - Web rings
     - tool: automatic menus
     - tool: automatic image gallery/carousel.
     - tool: automatically add alt text and titles to images.
