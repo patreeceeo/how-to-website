@@ -27,6 +27,8 @@
   let _mostRecentActiveEl = null;
   let _activeElInitOffsetX = 0;
   let _activeElInitOffsetY = 0;
+  /** @type Array<HTMLElement> */
+  let _addedElements = [];
 
   window.addEventListener("load", handleLoad);
   window.addEventListener("mousemove", handleMouseMove);
@@ -163,6 +165,7 @@
     */
   function addElement(el) {
     el.addEventListener("mousedown", handleMouseDown);
+    _addedElements.push(el)
     if(!positionTypes.some(hasPositionType.bind(null, el))) {
       console.warn("%o%cGrabby hand: You're using me incorrectly with the above element! It does not have one of the following position types: %o", el, consoleStyleWarning, positionTypes)
     }
@@ -216,14 +219,29 @@
     }
   }
 
+  /** @param el {HTMLElement}
+    * @param arr {Array<HTMLElement>}
+    * @return {HTMLElement | null}
+    */
+  function findRootElement(el, arr) {
+    if(arr.indexOf(el) >= 0) {
+      return el
+    } else if(el.parentElement) {
+      return findRootElement(el.parentElement, arr)
+    }
+    return null
+  }
+
   /**
     * @param el {HTMLElement}
     */
   function setActiveElement(el) {
-    _activeEl = el;
-    _activeEl.setAttribute('draggable', "false")
-    document.body.classList.add('grabby-hand-grabbing');
-    _mostRecentActiveEl = _activeEl
+    _activeEl = findRootElement(el, _addedElements)
+    if(_activeEl) {
+      _activeEl.setAttribute('draggable', "false")
+      document.body.classList.add('grabby-hand-grabbing');
+      _mostRecentActiveEl = _activeEl
+    }
   }
 
   /** @param x {number}
