@@ -1,4 +1,6 @@
 // TODO rename to moveTool
+// TODO fix relative position support
+// TODO add support for sorting and re-parenting static elements
 // TODO add all block elements by default?
 // TODO move this to its own repo?
 // TODO add removeElement API method
