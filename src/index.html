@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TODO</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/fluid.css">
-    <link rel="stylesheet" href="styles/modular-scale.css">
-    <link rel="stylesheet" href="styles/typography.css">
-    <link rel="stylesheet" href="styles/position.css">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/fluid.css" />
+    <link rel="stylesheet" href="styles/modular-scale.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
+    <link rel="stylesheet" href="styles/position.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
 
     <!-- Facebook share metadata -->
-    <meta property="og:title" content="TODO">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="TODO">
-    <meta property="og:image" content="TODO">
+    <meta property="og:title" content="TODO" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="TODO" />
+    <meta property="og:image" content="TODO" />
 
     <!-- Twitter share metadata -->
-    <meta name="twitter:title" content="TODO">
-    <meta name="twitter:description" content="TODO">
-    <meta name="twitter:image" content="TODO">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TODO" />
+    <meta name="twitter:description" content="TODO" />
+    <meta name="twitter:image" content="TODO" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <style>
       /* Put your CSS here */
@@ -33,23 +33,61 @@
       <h1>Whoah, your browser is OLD!</h1>
       <p>Consider installing one of these fine, modern browsers:</p>
       <ul>
-        <li><a href="https://www.microsoft.com/en-us/edge/download?form=MA13FJ" target="_blank">Edge</a></li>
-        <li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a></li>
-        <li><a href="https://www.chromium.org/getting-involved/download-chromium/" target="_blank">Chromium</a></li>
-        <li><a href="https://www.opera.com/download" target="_blank">Opera</a></li>
+        <li>
+          <a
+            href="https://www.microsoft.com/en-us/edge/download?form=MA13FJ"
+            target="_blank"
+            >Edge</a
+          >
+        </li>
+        <li>
+          <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"
+            >Firefox</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.chromium.org/getting-involved/download-chromium/"
+            target="_blank"
+            >Chromium</a
+          >
+        </li>
+        <li>
+          <a href="https://www.opera.com/download" target="_blank">Opera</a>
+        </li>
       </ul>
     <![endif]-->
-    <!-- Put your HTML here -->
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <h4>h4</h4>
-    <h5>h5</h5>
-    <h6>h6</h6>
-    <p>p</p>
-    <!-- TODO make separate page for each demo -->
-    <img src="images/frog.png" alt="frog" class="absolute" x-grabby-hand="" style="width: 2em">
-    <img src="images/frog.png" alt="frog" class="absolute" x-grabby-hand="" style="width: 4em">
+    <div x-side-show-slide>
+      <!-- Put your HTML here -->
+      <h1>h1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+      <p>p</p>
+      <!-- TODO make separate page for each demo -->
+      <img
+        src="images/frog.png"
+        alt="frog"
+        class="absolute"
+        x-grabby-hand=""
+        style="width: 2em"
+      />
+      <img
+        src="images/frog.png"
+        alt="frog"
+        class="absolute"
+        x-grabby-hand=""
+        style="width: 4em"
+      />
+    </div>
+    <div x-side-show-slide>
+      <h1>slide 2</h1>
+    </div>
+    <button x-side-show-prev>prev</button>
+    <button x-side-show-next>next</button>
+    <script src="tools/sideShow.js" type="module"></script>
     <script src="tools/grabby-hand.js"></script>
     <script src="tools/fileTool.js"></script>
     <script type="text/javascript">
