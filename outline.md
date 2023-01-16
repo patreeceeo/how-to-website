@@ -3,7 +3,7 @@
 1. Get inspired looking at cool websites like those of [Elliot Cost](https://elliott.computer/) [10 minutes]
 1. The what, why, how and why of The DIY Web [15 minutes]
     - why #1 -- personal advantages -- creative freedom, lower cost, owning your creations, websites that download faster...
-    - why #2 -- societal advantages -- more interesting, unique, unfiltered websites; potential for mutual aid, community organizing and distribution of information outside of corporate or government controlled channels; more money stays within community rather than going to tech giants; weaken the technocracy. There's a lack of technical information online that includes any of the human/ethical considerations, and I hope this can fill that void.
+    - why #2 -- societal advantages -- more interesting, unique, unfiltered websites; potential for mutual aid, community organizing and distribution of information outside of corporate or government controlled channels; more money stays within community rather than going to tech giants; steal fire from and weaken the technocracy (See Last Week Tonight episode on tech monopolies.) There's a lack of technical information online that includes any of the human/ethical considerations, and I hope this can fill that void.
     - why #3 -- my motivation -- Teaching is fun. I believe in this. I want to help make the Web a better place. I also think there might be (a)vocational opportunities down this path; skill/labor exchange...
     - finding a firm place to stand despite the only constant being change: standards, recommendations, etc
     - the computer is a meta-tool: let the machine do machine stuff good at so you can focus on being creative
@@ -18,7 +18,7 @@
     - An open question: How could the DIY Web, as an alternative to Twitter and other social media, better handle hate speech and disinformation?
       - Lack of notifications that steal your attention is perhaps a feature.
       - It takes more effort to put stuff out there this way. Many trolls probably won't bother.
-      - old school Web rings and cooperative bookmarking can subvert big tech's monopoly on how we find and organize information on the Web
+      - could old school Web rings and cooperative bookmarking subvert big tech's monopoly on how we find and organize information on the Web?
     - tool: automatic menus
     - tool: automatic image gallery/carousel.
     - tool: automatically add alt text and titles to images.
@@ -50,6 +50,8 @@
     - Optimize large images
     - Ways to avoid copying and pasting the same code over and over again
     - Using more than your OS's built-in fonts
+    - Custom 404 page
+    - Linkback tracking (probably requires switching to Netlify)
   
 
 
