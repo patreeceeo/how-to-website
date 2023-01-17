@@ -26,9 +26,33 @@
 
     <style>
       /* Put your CSS here */
+      [x-side-show-slide] {
+        display: none;
+      }
+
+      .full-height,
+      [x-side-show-slide] {
+        height: 100vh;
+      }
+
+      .speaker-notes {
+        color: grey;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        margin: 1rem;
+      }
+
+      .fixed {
+        position: fixed;
+      }
+
+      .top {
+        top: 0;
+      }
     </style>
   </head>
-  <body>
+  <body class="full-height">
     <!--[if IE]>
       <h1>Whoah, your browser is OLD!</h1>
       <p>Consider installing one of these fine, modern browsers:</p>
@@ -57,16 +81,86 @@
         </li>
       </ul>
     <![endif]-->
+    <div class="fixed top">
+      <button x-side-show-prev>prev</button>
+      <button x-side-show-next>next</button>
+    </div>
     <div x-side-show-slide>
-      <!-- Put your HTML here -->
-      <h1>h1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <h4>h4</h4>
-      <h5>h5</h5>
-      <h6>h6</h6>
-      <p>p</p>
-      <!-- TODO make separate page for each demo -->
+      <h1>HYPErlinks</h1>
+      <ul>
+        <li><a href="https://elliott.computer/">Elliot Computer</a></li>
+        <li><a href="https://through-the-floor.com/">Meena Vempaty</a></li>
+        <li><a href="http://cfhhunt.com/">C. F. H. Hunt</a></li>
+        <li>
+          <a
+            href="http://web.archive.org/web/20150205230923/https://www.shauntan.net/"
+            >Shaun Tan (via Wayback Machine)</a
+          >
+        </li>
+        <li>
+          <a href="https://kokorobot.ca/site/illustration.html">Rek Bell</a>
+        </li>
+      </ul>
+    </div>
+    <div x-side-show-slide>
+      <h1>about me</h1>
+      <ul>
+        <li>big nerd</li>
+        <li>artsy</li>
+      </ul>
+      <div class="speaker-notes">
+        <p>I've been making websites since middle school.</p>
+      </div>
+    </div>
+    <div x-side-show-slide>
+      <h1>what why how</h1>
+      <h2>part 1: What is the (DIY) Web?</h2>
+    </div>
+    <div x-side-show-slide>
+      <h1>what why how</h1>
+      <h2>part 2: Why do I give a fuck?</h2>
+    </div>
+    <div x-side-show-slide>
+      <h1>what why how</h1>
+      <h2>part 3: Key concepts</h2>
+      <h3>tool tool</h3>
+    </div>
+    <div x-side-show-slide>
+      <h1>what why how</h1>
+      <h2>part 3: Key concepts</h2>
+      <h3>
+        We have standards
+      </h3>
+      <p>
+        &ldquo;The greatest problem in communication is the illusion that it has
+        taken place.&rdquo;
+      </p>
+      <p>
+        &mdash; GBS
+      </p>
+    </div>
+    <div x-side-show-slide>
+      <h1>what why how</h1>
+      <h2>part 3: Key concepts</h2>
+      <h3>KISS 💋</h3>
+    </div>
+    <div x-side-show-slide>
+      <h1>Our workbench:</h1>
+      <ul>
+        <li>VSCode</li>
+        <li>Chrome devtools</li>
+      </ul>
+    </div>
+    <div x-side-show-slide>
+      <h1>Let's code!</h1>
+      <h2><pre>HTML</pre></h2>
+    </div>
+    <div x-side-show-slide>
+      <h1>Interlude:</h1>
+      <h2>Document tool</h2>
+    </div>
+    <div x-side-show-slide>
+      <h1>transform tool demo</h1>
       <img
         src="images/frog.png"
         alt="frog"
@@ -82,11 +176,6 @@
         style="width: 4em"
       />
     </div>
-    <div x-side-show-slide>
-      <h1>slide 2</h1>
-    </div>
-    <button x-side-show-prev>prev</button>
-    <button x-side-show-next>next</button>
     <script src="tools/sideShow.js" type="module"></script>
     <script src="tools/grabby-hand.js"></script>
     <script src="tools/fileTool.js"></script>
