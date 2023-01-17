@@ -1,41 +1,67 @@
 window.addEventListener("load", handleLoad);
 
-let currentSlideIndex = 0
+let currentSlideIndex = 0;
 /** @type Array<HTMLElement> */
-let slideRootElements = []
+let slideRootElements = [];
 
 function handleLoad() {
-  slideRootElements = findSlideRootElements()
-  addEventListeners()
-  update()
+  currentSlideIndex = getCurrentSlideIndexFromLocation();
+  slideRootElements = findSlideRootElements();
+  addEventListeners();
+  update();
+}
+
+function getCurrentSlideIndexFromLocation() {
+  const params = new URLSearchParams(location.search);
+  return params.has("slide")
+    ? parseInt(/** @type string */ (params.get("slide")))
+    : 0;
+}
+/** @param index {number} */
+function setCurrentSlideIndex(index) {
+  if (index !== currentSlideIndex) {
+    currentSlideIndex = index;
+    const params = new URLSearchParams(location.search);
+    params.set("slide", index.toString());
+    location.search = params.toString();
+  }
 }
 
 function findSlideRootElements() {
-  return toArray(document.querySelectorAll("[x-side-show-slide]"))
+  return toArray(document.querySelectorAll("[x-side-show-slide]"));
 }
 
 function addEventListeners() {
-  document.querySelector("[x-side-show-next]")?.addEventListener("click", nextSlide)
-  document.querySelector("[x-side-show-prev]")?.addEventListener("click", prevSlide)
+  document
+    .querySelector("[x-side-show-next]")
+    ?.addEventListener("click", nextSlide);
+  document
+    .querySelector("[x-side-show-prev]")
+    ?.addEventListener("click", prevSlide);
 }
 
 function nextSlide() {
-  currentSlideIndex = Math.min(currentSlideIndex + 1, slideRootElements.length - 1)
-  update()
+  setCurrentSlideIndex(
+    Math.min(currentSlideIndex + 1, slideRootElements.length - 1)
+  );
 }
 function prevSlide() {
-  currentSlideIndex = Math.max(currentSlideIndex - 1, 0)
-  update()
+  setCurrentSlideIndex(Math.max(currentSlideIndex - 1, 0));
 }
 
 function update() {
-  for(const [index, element] of slideRootElements.entries()) {
-    Object.assign(element.style, index === currentSlideIndex ? {display: "block", visibility: "visible"}: {display: "none", "visibility": "hidden" })
+  for (const [index, element] of slideRootElements.entries()) {
+    Object.assign(
+      element.style,
+      index === currentSlideIndex
+        ? { display: "block", visibility: "visible" }
+        : { display: "none", visibility: "hidden" }
+    );
   }
 }
 
 /** @param arrayLike {Iterable<any>}
-  */
+ */
 function toArray(arrayLike) {
-  return Array.prototype.slice.apply(arrayLike)
+  return Array.prototype.slice.apply(arrayLike);
 }
