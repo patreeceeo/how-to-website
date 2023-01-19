@@ -31,6 +31,14 @@ function findSlideRootElements() {
   return toArray(document.querySelectorAll("[x-side-show-slide]"));
 }
 
+/** @type {{[key: string]: () => void}} */
+const keyMap = {
+  ArrowLeft: prevSlide,
+  ArrowUp: prevSlide,
+  ArrowRight: nextSlide,
+  ArrowDown: nextSlide
+}
+
 function addEventListeners() {
   document
     .querySelector("[x-side-show-next]")
@@ -38,6 +46,13 @@ function addEventListeners() {
   document
     .querySelector("[x-side-show-prev]")
     ?.addEventListener("click", prevSlide);
+
+  document.body.addEventListener("keydown", (e) => {
+    const handler = keyMap[e.code]
+    if(handler) {
+      handler()
+    }
+  })
 }
 
 function nextSlide() {
