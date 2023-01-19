@@ -43,12 +43,10 @@
         margin: 1rem;
       }
 
-      .fixed {
-        position: fixed;
-      }
-
-      .top {
-        top: 0;
+      main {
+        margin: 1em auto;
+        width: 80%;
+        max-width: 20rem;
       }
     </style>
   </head>
@@ -81,101 +79,224 @@
         </li>
       </ul>
     <![endif]-->
-    <div class="fixed top">
-      <button x-side-show-prev>prev</button>
-      <button x-side-show-next>next</button>
-    </div>
-    <div x-side-show-slide>
-      <h1>HYPErlinks</h1>
-      <ul>
-        <li><a href="https://elliott.computer/">Elliot Computer</a></li>
-        <li><a href="https://through-the-floor.com/">Meena Vempaty</a></li>
-        <li><a href="http://cfhhunt.com/">C. F. H. Hunt</a></li>
-        <li>
-          <a
-            href="http://web.archive.org/web/20150205230923/https://www.shauntan.net/"
-            >Shaun Tan (via Wayback Machine)</a
-          >
-        </li>
-        <li>
-          <a href="https://kokorobot.ca/site/illustration.html">Rek Bell</a>
-        </li>
-      </ul>
-    </div>
-    <div x-side-show-slide>
-      <h1>about me</h1>
-      <ul>
-        <li>big nerd</li>
-        <li>artsy</li>
-      </ul>
-      <div class="speaker-notes">
-        <p>I've been making websites since middle school.</p>
+    <main>
+      <div>
+        <button x-side-show-prev>prev</button>
+        <button x-side-show-next>next</button>
       </div>
-    </div>
-    <div x-side-show-slide>
-      <h1>what why how</h1>
-      <h2>part 1: What is the (DIY) Web?</h2>
-    </div>
-    <div x-side-show-slide>
-      <h1>what why how</h1>
-      <h2>part 2: Why do I give a fuck?</h2>
-    </div>
-    <div x-side-show-slide>
-      <h1>what why how</h1>
-      <h2>part 3: Key concepts</h2>
-      <h3>tool tool</h3>
-    </div>
-    <div x-side-show-slide>
-      <h1>what why how</h1>
-      <h2>part 3: Key concepts</h2>
-      <h3>
-        We have standards
-      </h3>
-      <p>
-        &ldquo;The greatest problem in communication is the illusion that it has
-        taken place.&rdquo;
-      </p>
-      <p>
-        &mdash; GBS
-      </p>
-    </div>
-    <div x-side-show-slide>
-      <h1>what why how</h1>
-      <h2>part 3: Key concepts</h2>
-      <h3>KISS 💋</h3>
-    </div>
-    <div x-side-show-slide>
-      <h1>Our workbench:</h1>
-      <ul>
-        <li>VSCode</li>
-        <li>Chrome devtools</li>
-      </ul>
-    </div>
-    <div x-side-show-slide>
-      <h1>Let's code!</h1>
-      <h2><pre>HTML</pre></h2>
-    </div>
-    <div x-side-show-slide>
-      <h1>Interlude:</h1>
-      <h2>Document tool</h2>
-    </div>
-    <div x-side-show-slide>
-      <h1>transform tool demo</h1>
-      <img
-        src="images/frog.png"
-        alt="frog"
-        class="absolute"
-        x-grabby-hand=""
-        style="width: 2em"
-      />
-      <img
-        src="images/frog.png"
-        alt="frog"
-        class="absolute"
-        x-grabby-hand=""
-        style="width: 4em"
-      />
-    </div>
+      <div x-side-show-slide>
+        <h1>HYPErlinks</h1>
+        <ul>
+          <li><a href="https://elliott.computer/">Elliot Computer</a></li>
+          <li><a href="https://through-the-floor.com/">Meena Vempaty</a></li>
+          <li><a href="http://cfhhunt.com/">C. F. H. Hunt</a></li>
+          <li>
+            <a
+              href="http://web.archive.org/web/20150205230923/https://www.shauntan.net/"
+              >Shaun Tan (via Wayback Machine) *</a
+            >
+          </li>
+          <li>
+            <a href="https://kokorobot.ca/site/illustration.html">Rek Bell</a>
+          </li>
+          <li>
+            <a href="http://deeperclarity.net/">Deeper Clarity</a>
+          </li>
+        </ul>
+      </div>
+      <div x-side-show-slide>
+        <h1>about me</h1>
+        <ul>
+          <li>big nerd</li>
+          <li>artsy</li>
+        </ul>
+        <div class="speaker-notes">
+          <p>I've been making websites since middle school.</p>
+        </div>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 1: What is the (DIY) Web?</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 2: Why do I give a fuck?</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 3: Key concepts</h2>
+        <h3>tool tool</h3>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 3: Key concepts</h2>
+        <h3>
+          it's
+          <pre>~ W O R L D  W I D E ~</pre>
+        </h3>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 3: Key concepts</h2>
+        <h3>
+          When in doubt, read (<a href="https://developer.mozilla.org">MDN</a>).
+        </h3>
+        <p>
+          &ldquo;The greatest problem in communication is the illusion that it
+          has taken place.&rdquo;
+        </p>
+        <p>&mdash; GBS</p>
+      </div>
+      <div x-side-show-slide>
+        <h1>what why how</h1>
+        <h2>part 3: Key concepts</h2>
+        <h3>KISS 💋</h3>
+      </div>
+      <div x-side-show-slide>
+        <h1>Our workbench:</h1>
+        <ul>
+          <li>VSCode</li>
+          <li>Chrome devtools</li>
+        </ul>
+      </div>
+      <div x-side-show-slide>
+        <h1>Jump to hypertext</h1>
+        <h2>Introducing HTML</h2>
+        <p>version 5</p>
+      </div>
+      <div x-side-show-slide>
+        <h1>Jump to hypertext</h1>
+        <h2>HTML5 Boilerplate</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>problem: visual task, verbal interface</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Introducing</h1>
+        <h2>document tool</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>Introducing CSS</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>problem: default styling</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>solution: normalize/reset</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>problem: responsiveness</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>a solution: fluid layout</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>problem: header sizes</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>solution: scales</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>problem: once again, visual task, verbal interface</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>The Style of Elements</h1>
+        <h2>a partial solution: transform tool</h2>
+        <img
+          src="images/frog.png"
+          alt="frog"
+          class="absolute"
+          x-grabby-hand=""
+          style="width: 2em"
+        />
+        <img
+          src="images/frog.png"
+          alt="frog"
+          class="absolute"
+          x-grabby-hand=""
+          style="width: 4em"
+        />
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>Introducing Git SCM and GitHub</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>problem: command line</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>solution: GitHub Desktop</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>the power of small, focused steps</h2>
+        <p>it's hard to think about multiple things at once.</p>
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>optional: get a domain name</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Ship it!</h1>
+        <h2>set up GitHub Pages</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>Check in</h1>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>Introducing JavaScript</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>When to use it?</h2>
+        <p>Remember to KISS!</p>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>problem: it's a plurality</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>a solution: go native</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>problem: images loading slowly</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>solution: smart image loading via JavaScript</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>embedding video, audio</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>integrating 3rd-party stuff</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>problem: I want a special font</h2>
+      </div>
+      <div x-side-show-slide>
+        <h1>I know Kung Fu</h1>
+        <h2>solution: Web fonts</h2>
+      </div>
+    </main>
+
     <script src="tools/sideShow.js" type="module"></script>
     <script src="tools/grabby-hand.js"></script>
     <script src="tools/fileTool.js"></script>
