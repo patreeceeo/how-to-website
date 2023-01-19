@@ -53,6 +53,16 @@ function addEventListeners() {
       handler()
     }
   })
+
+  const originalUrl = new URL(location.toString())
+  window.addEventListener("beforeunload", (e) => {
+    const currentUrl = new URL(location.toString())
+    if(currentUrl.origin === originalUrl.origin) {
+      e.preventDefault()
+      currentSlideIndex = getCurrentSlideIndexFromLocation();
+      update()
+    }
+  })
 }
 
 function nextSlide() {
