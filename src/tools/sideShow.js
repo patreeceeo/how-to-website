@@ -42,10 +42,16 @@ const keyMap = {
 function addEventListeners() {
   document
     .querySelector("[x-side-show-next]")
-    ?.addEventListener("click", nextSlide);
+    ?.addEventListener("click", (e) => {
+      e.preventDefault()
+      nextSlide()
+    });
   document
     .querySelector("[x-side-show-prev]")
-    ?.addEventListener("click", prevSlide);
+    ?.addEventListener("click", (e) => {
+      e.preventDefault()
+      prevSlide()
+    });
 
   document.body.addEventListener("keydown", (e) => {
     const handler = keyMap[e.code]
@@ -55,7 +61,8 @@ function addEventListeners() {
   })
 
   const originalUrl = new URL(location.toString())
-  window.addEventListener("beforeunload", (e) => {
+
+  window.addEventListener("locationchange", (e) => {
     const currentUrl = new URL(location.toString())
     if(currentUrl.origin === originalUrl.origin) {
       e.preventDefault()
