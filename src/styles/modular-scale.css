@@ -1,5 +1,5 @@
 :root {
-  --modular-scale: 1.4;
+  --modular-scale: 1.2;
   --scale-0: 100%;
   --scale-1: calc(var(--scale-0) * var(--modular-scale));
   --scale-2: calc(var(--scale-1) * var(--modular-scale));
