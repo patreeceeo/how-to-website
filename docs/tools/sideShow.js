@@ -14,6 +14,32 @@ function handleLoad() {
   slideFrames = findSlideFrames(slideRootElements);
   addEventListeners();
   update();
+  createTOC();
+}
+
+function createTOC() {
+  const container = document.querySelector("[x-side-show-toc]")
+  const data = []
+  if(container) {
+    for(const [index, el] of slideRootElements.entries()) {
+      const h1 = el.querySelector('h1')
+      const h2 = el.querySelector('h2')
+      data[index] = {
+        href: getSlideURL(index),
+        title: `${h1.innerText}${h2 ? `: ${h2.innerText}` : ``}`
+      }
+    }
+
+    const ol = container.appendChild(document.createElement('ol'))
+    for(const item of data) {
+      const a = document.createElement('a');
+      const li = document.createElement('li')
+      a.href = item.href
+      a.innerText = item.title
+      li.appendChild(a)
+      ol.appendChild(li)
+    }
+  }
 }
 
 function getCurrentSlideIndexFromLocation() {
@@ -47,6 +73,16 @@ function setCurrentFrameIndex(index) {
     params.set("frame", index.toString());
     location.search = params.toString();
   }
+}
+
+/** @param index {number} */
+function getSlideURL(index) {
+  const url = new URL(location)
+  const params = new URLSearchParams(location.search);
+  params.set("slide", index.toString());
+  params.set("frame", "0");
+  url.search = params
+  return url
 }
 
 function findSlideRootElements() {
