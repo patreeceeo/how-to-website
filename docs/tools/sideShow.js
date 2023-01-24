@@ -137,6 +137,7 @@ function addEventListeners() {
       e.preventDefault()
       currentSlideIndex = getCurrentSlideIndexFromLocation();
       update()
+      window.screenY = 0
     }
   })
 }
