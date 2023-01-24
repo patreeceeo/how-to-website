@@ -50,7 +50,11 @@
       main {
         margin: 1rem auto;
         width: 80%;
-        max-width: 20rem;
+        max-width: 50rem;
+      }
+
+      .inline {
+        display: inline;
       }
     </style>
   </head>
@@ -93,198 +97,200 @@
           <button x-side-show-prev>prev</button>
           <button x-side-show-next>next</button>
         </div>
-        <div x-side-show-slide>
-          <h1>HYPErlinks</h1>
-          <ul>
-            <li><a href="https://elliott.computer/">Elliot Computer</a></li>
-            <li x-side-show-frame><a href="https://through-the-floor.com/">Meena Vempaty</a></li>
-            <li x-side-show-frame><a href="http://cfhhunt.com/">C. F. H. Hunt</a></li>
-            <li x-side-show-frame>
-              <a
-                  href="http://web.archive.org/web/20150205230923/https://www.shauntan.net/"
-                  >Shaun Tan (via Wayback Machine) *</a
-                >
-            </li>
-                <li x-side-show-frame>
-                  <a href="https://kokorobot.ca/site/illustration.html">Rek Bell</a>
-                </li>
-                <li x-side-show-frame>
-                  <a href="http://deeperclarity.net/">Deeper Clarity</a>
-                </li>
-          </ul>
-        </div>
-        <div x-side-show-slide>
-          <h1>about me</h1>
-          <ul>
-            <li>big nerd</li>
-            <li>artsy</li>
-          </ul>
-          <div class="speaker-notes">
-            <p>I've been making websites since middle school.</p>
+        <h1 x-side-show-display-chapter-title></h1>
+        <side-show-chapter title="what, why, how">
+          <div x-side-show-slide>
+            <h2>HYPErlinks</h2>
+            <ul>
+              <li><a href="https://elliott.computer/">Elliot Computer</a></li>
+              <li x-side-show-frame><a href="https://through-the-floor.com/">Meena Vempaty</a></li>
+              <li x-side-show-frame><a href="http://cfhhunt.com/">C. F. H. Hunt</a></li>
+              <li x-side-show-frame>
+                <a
+                    href="http://web.archive.org/web/20150205230923/https://www.shauntan.net/"
+                    >Shaun Tan (via Wayback Machine) *</a
+                  >
+              </li>
+                  <li x-side-show-frame>
+                    <a href="https://kokorobot.ca/site/illustration.html">Rek Bell</a>
+                  </li>
+                  <li x-side-show-frame>
+                    <a href="http://deeperclarity.net/">Deeper Clarity</a>
+                  </li>
+            </ul>
           </div>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>What is the (DIY) Web?</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>Why do I give a fuck?</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>Key concepts</h2>
-          <h3>tool tool</h3>
-          <blockquote>
-            <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
-            <p>Working in the head doesn't scale. The head is a hardware platform that hasn't been updated in millions of years. To enable the programmer to achieve increasingly complex feats of creativity, the environment must get the programmer out of her head, by providing an external imagination where the programmer can always be reacting to a work-in-progress.</p>
-          </blockquote>
-          <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>Key concepts</h2>
-          <p>
-          it's
-          <pre>~ W O R L D  W I D E ~</pre>
-          </p>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>Key concepts</h2>
-          <h3>
-            When in doubt, read (<a href="https://developer.mozilla.org">MDN</a>).
-          </h3>
-          <p>
-          &ldquo;The greatest problem in communication is the illusion that it
-          has taken place.&rdquo;
-          </p>
-          <p>&mdash; GBS</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>what why how</h1>
-          <h2>Key concepts</h2>
-          <h3>KISS 💋</h3>
-        </div>
-        <div x-side-show-slide>
-          <h1>Our workbench:</h1>
-          <ul>
-            <li x-side-show-frame>VSCode</li>
-            <li x-side-show-frame>Chrome devtools</li>
-          </ul>
-        </div>
-        <div x-side-show-slide>
-          <h1>Jump to hypertext</h1>
-          <h2>Introducing HTML</h2>
-          <p>version 5</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>Jump to hypertext</h1>
-          <h2>HTML5 Boilerplate</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>Jump to hypertext</h1>
-          <p>problem: visual task, verbal interface</p>
-          <p x-side-show-frame>solution: document tool</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>The Style of Elements</h1>
-          <h2>Introducing CSS</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>The Style of Elements</h1>
-          <p>problem: default styling</p>
-          <p x-side-show-frame>solution: normalize/reset</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>The Style of Elements</h1>
-          <p>problem: look good on mobile and desktop</p>
-          <p x-side-show-frame>a solution: fluid layout</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>The Style of Elements</h1>
-          <p>problem: header sizes</p>
-          <p x-side-show-frame>solution: scales</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>The Style of Elements</h1>
-          <p>problem: once again, visual task, verbal interface</p>
-          <div x-side-show-frame>
-            <p>a partial solution: transform tool</p>
-            <img
-                src="images/frog.png"
-                alt="frog"
-                class="absolute"
-                x-grabby-hand=""
-                style="width: 2em"
-                />
-            <img
-                src="images/frog.png"
-                alt="frog"
-                class="absolute"
-                x-grabby-hand=""
-                style="width: 4em"
-                />
+          <div x-side-show-slide>
+            <h2>about me</h2>
+            <ul>
+              <li>big nerd</li>
+              <li>artsy</li>
+            </ul>
+            <div class="speaker-notes">
+              <p>I've been making websites since middle school.</p>
+            </div>
           </div>
-        </div>
-        <div x-side-show-slide>
-          <h1>Ship it!</h1>
-          <h2>Introducing Git SCM and GitHub</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>Ship it!</h1>
-          <p>problem: command line</p>
-          <p x-side-show-frame>solution: GitHub Desktop</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>Ship it!</h1>
-          <p>problem: hard to think about multiple things at once.</p>
-          <p x-side-show-frame>solution: take small, focused steps</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>Ship it!</h1>
-          <p>Lets set up GitHub Pages</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>Ship it!</h1>
-          <p>Get and <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">set up</a> a domain name (optional)</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>Check in</h1>
-          <p>How are we doing?</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <h2>Introducing JavaScript</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <h2>When to use JavaScript?</h2>
-          <p x-side-show-frame>Remember to KISS!</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <p>problem: JavaScript is a plurality</p>
-          <p x-side-show-frame>my advice: go native</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <p>problem: images slowing down the page load</p>
-          <p x-side-show-frame>solution: smart image loading via JavaScript</p>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <h2>embedding video, audio</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <h2>integrating 3rd-party stuff</h2>
-        </div>
-        <div x-side-show-slide>
-          <h1>I know Kung Fu</h1>
-          <p>problem: I want a special font</p>
-          <p x-side-show-frame>solution: Web fonts</p>
-        </div>
+          <div x-side-show-slide>
+            <h2>What is the (DIY) Web?</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>Why (do I) give a fuck?</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>tool tool</h2>
+            <blockquote>
+              <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
+              <p>Working in the head doesn't scale. The head is a hardware platform that hasn't been updated in millions of years. To enable the programmer to achieve increasingly complex feats of creativity, the environment must get the programmer out of her head, by providing an external imagination where the programmer can always be reacting to a work-in-progress.</p>
+            </blockquote>
+            <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
+          </div>
+          <div x-side-show-slide>
+            <h2>World <pre class="inline"> ~ W I D E ~ </pre> Web</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>docs, guides, etc</h2>
+            <p>
+              <a href="https://developer.mozilla.org">MDN</a> for fundamentals.
+            </p>
+            <p>
+              <a href="css-tricks.com">CSS Tricks</a> for style-focused how-to articles.
+            </p>
+            <p>
+            &ldquo;The greatest problem in communication is the illusion that it
+            has taken place.&rdquo;
+            </p>
+            <p>&mdash; GBS</p>
+            <p x-side-show-frame>wut?</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>KISS</h2>
+            <p>💋</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>Our workbench:</h2>
+            <ul>
+              <li x-side-show-frame>VSCode</li>
+              <li x-side-show-frame>Chrome devtools</li>
+            </ul>
+          </div>
+        </side-show-chapter>
+        <side-show-chapter title="Jump to hypertext">
+          <div x-side-show-slide>
+            <h2>Introducing HTML</h2>
+            <p>version 5</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>HTML5 Boilerplate</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>tool!</h2>
+            <p>problem: visual task, verbal interface</p>
+            <p x-side-show-frame>solution: document tool (WIP)</p>
+          </div>
+        </side-show-chapter>
+        <side-show-chapter title="The Style of Elements">
+          <div x-side-show-slide>
+            <h2>Introducing CSS</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>default styles</h2>
+            <p>problem: default styling</p>
+            <p x-side-show-frame>solution: normalize/reset</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>responsiveness</h2>
+            <p>problem: look good on mobile and desktop</p>
+            <p x-side-show-frame>a solution: fluid layout</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>typography</h2>
+            <p>problem: header sizes</p>
+            <p x-side-show-frame>solution: scales</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>positioning</h2>
+            <p>problem: once again, visual task, verbal interface</p>
+            <div x-side-show-frame>
+              <p>a partial solution: transform tool</p>
+              <img
+                  src="images/frog.png"
+                  alt="frog"
+                  class="absolute"
+                  x-grabby-hand=""
+                  style="width: 2em"
+                  />
+              <img
+                  src="images/frog.png"
+                  alt="frog"
+                  class="absolute"
+                  x-grabby-hand=""
+                  style="width: 4em"
+                  />
+            </div>
+          </div>
+        </side-show-chapter>
+        <side-show-chapter title="ship it!">
+          <div x-side-show-slide>
+            <h2>Introducing Git SCM and GitHub</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>CLI v GUI</h2>
+            <p>problem: command line</p>
+            <p x-side-show-frame>solution: GitHub Desktop</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>Git with the program</h2>
+            <p>problem: hard to think about multiple things at once.</p>
+            <p x-side-show-frame>solution: take small, focused steps</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>GitHub Pages</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>Custom domain</h2>
+            <p>Get and <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">set up</a> a domain name (optional)</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>Check in</h2>
+            <p>How are we doing?</p>
+          </div>
+        </side-show-chapter>
+        <side-show-chapter title="JavaScript, etc">
+          <div x-side-show-slide>
+            <h2>Introducing JavaScript</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>When to use JavaScript?</h2>
+            <p x-side-show-frame>Remember to KISS!</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>option overload</h2>
+            <p>&ldquo;Art lives from constraints and dies from freedom&ldquo;</p>
+            <p>&mdash; da Vinci</p>
+            <p>No:</p>
+            <ul>
+              <li x-side-show-frame>frameworks</li>
+              <li x-side-show-frame>'pilers</li>
+              <li x-side-show-frame>NPM</li>
+              <li x-side-show-frame>Drama</li>
+            </ul>
+          </div>
+          <div x-side-show-slide>
+            <h2>big picture</h2>
+            <p>problem: images slowing down the page load</p>
+            <p x-side-show-frame>solution: smart image loading via JavaScript</p>
+          </div>
+          <div x-side-show-slide>
+            <h2>embedding video, audio</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>integrating 3rd-party stuff</h2>
+          </div>
+          <div x-side-show-slide>
+            <h2>what the font?</h2>
+            <p>problem: I want a special font</p>
+            <p x-side-show-frame>solution: Web fonts</p>
+          </div>
+        <side-show-chapter>
       </main>
 
       <script src="tools/sideShow.js" type="module"></script>
