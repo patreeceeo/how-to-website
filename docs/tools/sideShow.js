@@ -3,6 +3,8 @@ window.addEventListener("load", handleLoad);
 let currentSlideIndex = 0;
 let currentFrameIndex = 0;
 /** @type Array<HTMLElement> */
+let chapterRootElements = [];
+/** @type Array<HTMLElement> */
 let slideRootElements = [];
 /** @type Array<Array<HTMLElement>> */
 let slideFrames = [];
@@ -10,6 +12,7 @@ let slideFrames = [];
 function handleLoad() {
   currentSlideIndex = getCurrentSlideIndexFromLocation();
   currentFrameIndex = getCurrentFrameIndexFromLocation();
+  chapterRootElements = findChapterRootElements();
   slideRootElements = findSlideRootElements();
   slideFrames = findSlideFrames(slideRootElements);
   addEventListeners();
@@ -19,25 +22,54 @@ function handleLoad() {
 
 function createTOC() {
   const container = document.querySelector("[x-side-show-toc]")
-  const data = []
+  const data = {
+    chapters: [],
+    slides: []
+  }
   if(container) {
+    for(const [index, el] of chapterRootElements.entries()) {
+      data.chapters[index] = {
+        title: el.getAttribute("title"),
+        slides: []
+      }
+    }
     for(const [index, el] of slideRootElements.entries()) {
-      const h1 = el.querySelector('h1')
-      const h2 = el.querySelector('h2')
-      data[index] = {
+      const header = el.querySelector('h1, h2, h3, h4, h5')
+      const chapterIndex = chapterRootElements.indexOf(el.parentElement)
+
+      data.slides[index] = {
         href: getSlideURL(index),
-        title: `${h1.innerText}${h2 ? `: ${h2.innerText}` : ``}`
+        title: `${header.innerText}`,
+        chapter: chapterIndex
+      }
+
+      if(chapterIndex >= 0) {
+        data.chapters[chapterIndex].slides.push(index)
       }
     }
 
-    const ol = container.appendChild(document.createElement('ol'))
-    for(const item of data) {
-      const a = document.createElement('a');
-      const li = document.createElement('li')
-      a.href = item.href
-      a.innerText = item.title
-      li.appendChild(a)
-      ol.appendChild(li)
+    const dl = document.createElement('dl')
+    container.appendChild(dl)
+    for(const chapter of data.chapters) {
+      const dt = document.createElement('dt')
+      const dd = document.createElement('dd')
+      const ol = document.createElement('ol')
+
+      dl.appendChild(dt)
+      dl.appendChild(dd)
+
+      dt.innerText = chapter.title
+      dd.appendChild(ol)
+
+      for(const slideIndex of chapter.slides) {
+        const slide = data.slides[slideIndex]
+        const a = document.createElement('a');
+        const li = document.createElement('li')
+        a.href = slide.href
+        a.innerText = slide.title
+        li.appendChild(a)
+        ol.appendChild(li)
+      }
     }
   }
 }
@@ -85,8 +117,18 @@ function getSlideURL(index) {
   return url
 }
 
+/** @param selector {string}
+  * @param parent { Document | HTMLElement }
+  * */
+function querySelectorAll(selector, parent = document) {
+  return /** @type {Array<HTMLElement>} */(toArray(parent.querySelectorAll(selector)))
+}
+
+function findChapterRootElements() {
+  return querySelectorAll("side-show-chapter")
+}
 function findSlideRootElements() {
-  return /** @type {Array<HTMLElement>} */(toArray(document.querySelectorAll("[x-side-show-slide]")))
+  return querySelectorAll("[x-side-show-slide]")
 }
 
 /** @param rootElements {Array<HTMLElement>}
@@ -95,7 +137,7 @@ function findSlideRootElements() {
 function findSlideFrames(rootElements) {
   const result = []
   for(const [index, el] of rootElements.entries()) {
-    result[index] = /** @type {Array<HTMLElement>} */(toArray(el.querySelectorAll("[x-side-show-frame]")))
+    result[index] = querySelectorAll("[x-side-show-frame]", el)
   }
   return result
 }
@@ -186,6 +228,11 @@ function update() {
         : { display: "none", visibility: "hidden" }
       );
     }
+  }
+
+  const elDisplayChapterTitle = document.querySelector('[x-side-show-display-chapter-title]')
+  if(elDisplayChapterTitle) {
+    elDisplayChapterTitle.innerText = slideRootElements[currentSlideIndex].parentElement.getAttribute('title')
   }
 }
 
