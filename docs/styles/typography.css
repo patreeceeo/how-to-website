@@ -4,6 +4,7 @@
 }
 h1 {
   font-size: var(--scale-1);
+  text-transform: uppercase;
 }
 h2 {
   font-size: var(--scale-6);
