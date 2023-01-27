@@ -25,6 +25,11 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <style>
+      :root {
+        --width-sidebar: 25vw;
+        --width-main: 40vw;
+      }
+
       /* Put your CSS here */
       [x-side-show-slide] {
         display: none;
@@ -41,8 +46,10 @@
 
       .speaker-notes {
         font-size: 0.5rem;
-        position: absolute;
-        bottom: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: var(--width-sidebar);
         margin: 1rem;
       }
 
@@ -52,9 +59,8 @@
       }
 
       main {
-        margin: 1rem auto;
-        width: calc(65vw - 1rem);
-        max-width: 50rem;
+        margin: 1rem;
+        width: var(--width-main);
       }
 
       .inline {
@@ -62,12 +68,12 @@
       }
 
       .sidebar {
-        width: 25vw;
+        width: var(--width-sidebar);
         font-size: 0.5rem;
       }
 
       .toolbar {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         right: 0;
         margin: 1rem;
@@ -167,16 +173,6 @@
           </div>
           <div x-side-show-slide>
             <h2>The dao of the creative computer user</h2>
-            <ul>
-              <li>experiment often</li>
-              <li>seek rapid, digestible feedback</li>
-              <li>automate the tedius work</li>
-            </ul>
-            <blockquote>
-              <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
-              <p>Working in the head doesn't scale. The head is a hardware platform that hasn't been updated in millions of years. To enable the programmer to achieve increasingly complex feats of creativity, the environment must get the programmer out of her head, by providing an external imagination where the programmer can always be reacting to a work-in-progress.</p>
-            </blockquote>
-            <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
             <p>Misleading:</p>
             <video
                 controls
@@ -191,6 +187,18 @@
               <a href="/hacking.mov">download it</a>
               and watch it with your favorite video player!
             </video>
+            <ul>
+              <li>think, experiment, repeat</li>
+              <li>seek rapid, multi-modal feedback</li>
+              <li>automate the tedius work</li>
+            </ul>
+            <blockquote>
+              <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
+            </blockquote>
+            <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
+            <div class="speaker-notes">
+              A hollywood counter-example. We see the protagonist go into a fugue state with math equations swirling around in his mind. Hours slip away. Then, finally, the typing stops and we reap the fruits of his labor. It's not a good way to be creative.
+            </div>
           </div>
           <div x-side-show-slide>
             <h2>docs, guides, etc</h2>
