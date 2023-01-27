@@ -227,8 +227,8 @@ function setElementVisibility(el, visible) {
   Object.assign(
     el.style,
     visible
-    ? { opacity: 1, visibility: "visible" }
-    : { opacity: 0, visibility: "hidden" }
+    ? { display: "block", visibility: "visible" }
+    : { display: "none", visibility: "hidden" }
   )
 }
 
