@@ -27,13 +27,15 @@
     <style>
       :root {
         --width-sidebar: 25vw;
-        --width-main: 40vw;
+        --width-slide: calc(100vw - var(--width-sidebar));
+        --width-slide-with-notes: calc(100vw - 2 * var(--width-sidebar) - 2 * 1rem);
       }
 
       main {
-        margin: 1rem;
-        width: var(--width-main);
+        padding: 1rem;
+        width: var(--width-slide);
       }
+
       button {
         cursor: crosshair;
       }
@@ -51,6 +53,10 @@
         display: none;
       }
 
+      .slide-with-notes {
+        width: var(--width-slide-with-notes);
+      }
+
       .flex-row {
         display: flex;
         flex-direction: row;
@@ -60,18 +66,13 @@
         padding: 1rem;
       }
 
-      .speaker-notes {
+      .notes {
         font-size: 0.5rem;
         position: fixed;
         top: 0;
         right: 0;
         width: var(--width-sidebar);
         margin: 1rem;
-      }
-
-      .scroll-y {
-        max-height: 100vh;
-        overflow-y: scroll;
       }
 
       .inline {
@@ -93,6 +94,11 @@
       }
       .toolbar:hover {
         opacity: 1;
+      }
+
+      .toolbar button {
+        width: auto;
+        padding: 0.5rem;
       }
 
     </style>
@@ -127,7 +133,7 @@
       </ul>
     <![endif]-->
     <div class="flex-row">
-      <section class="p1 scroll-y sidebar">
+      <section class="p1 sidebar">
         <h5>table of contents</h5>
         <nav x-side-show-toc></nav>
       </section>
@@ -147,15 +153,17 @@
             </ul>
           </div>
           <div x-side-show-slide>
-            <h2>What is this and why give a fuck?</h2>
-            It's
-            <ul>
-              <li>thrifty</li>
-              <li>creative</li>
-              <li>radical</li>
-              <li x-side-show-frame>and fun!</li>
-            </ul>
-            <div class="speaker-notes">
+            <div class="slide-with-notes">
+              <h2>What is this and why give a fuck?</h2>
+              It's
+              <ul>
+                <li>thrifty</li>
+                <li>creative</li>
+                <li>radical</li>
+                <li x-side-show-frame>and fun!</li>
+              </ul>
+            </div>
+            <div class="notes">
               Status quo is founded on info asymmetry: Few can master a black art, so we must attempt to convey our ideas through the masters, and pay them for the privilege. But I suspect it's actually pretty accessible and you don't have to achieve "mastery" in order to make a cool site. Thanks to idealism of the Web ecosystem, the barrier is always getting lower... And fun because of virtually limitless possibilities and we can share and remix our knowledge.
             </div>
           </div>
@@ -180,31 +188,33 @@
             </ul>
           </div>
           <div x-side-show-slide>
-            <h2>The dao of the creative computer user</h2>
-            <p>Misleading:</p>
-            <video
-                controls
-            >
-              <source
-                  src="/hacking.mov"
-                  type="video/quicktime" />
-              <source
-                  src="/hacking.webm"
-                  type="video/webm" />
-              Sorry, your browser doesn't support embedded videos, but don't worry, you can
-              <a href="/hacking.mov">download it</a>
-              and watch it with your favorite video player!
-            </video>
-            <ul>
-              <li>think, experiment, repeat</li>
-              <li>seek rapid, multi-modal feedback</li>
-              <li>automate the tedius work</li>
-            </ul>
-            <blockquote>
-              <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
-            </blockquote>
-            <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
-            <div class="speaker-notes">
+            <div class="slide-with-notes">
+              <h2>The dao of the creative computer user</h2>
+              <p>Misleading:</p>
+              <video
+                  controls
+              >
+                <source
+                    src="/hacking.mov"
+                    type="video/quicktime" />
+                <source
+                    src="/hacking.webm"
+                    type="video/webm" />
+                Sorry, your browser doesn't support embedded videos, but don't worry, you can
+                <a href="/hacking.mov">download it</a>
+                and watch it with your favorite video player!
+              </video>
+              <ul>
+                <li>think, experiment, repeat</li>
+                <li>seek rapid, multi-modal feedback</li>
+                <li>automate the tedius work</li>
+              </ul>
+              <blockquote>
+                <p>A person is not a machine, and should not be forced to think like one&hellip;</p>
+              </blockquote>
+              <p>&mdash; Bret Victor on <a href="http://worrydream.com/LearnableProgramming/">Learnable Programming</a></p>
+            </div>
+            <div class="notes">
               A hollywood counter-example. We see the protagonist go into a fugue state with math equations swirling around in his mind. Hours slip away. Then, finally, the typing stops and we reap the fruits of his labor. It's not a good way to be creative.
             </div>
           </div>
