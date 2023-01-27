@@ -35,26 +35,35 @@
         flex-direction: row;
       }
 
-      .m1 {
-        margin: 1rem;
+      .p1 {
+        padding: 1rem;
       }
 
       .speaker-notes {
-        color: grey;
-        position: fixed;
+        font-size: 0.5rem;
+        position: absolute;
         bottom: 0;
-        background-color: white;
         margin: 1rem;
+      }
+
+      .scroll-y {
+        max-height: 100vh;
+        overflow-y: scroll;
       }
 
       main {
         margin: 1rem auto;
-        width: 80%;
+        width: calc(65vw - 1rem);
         max-width: 50rem;
       }
 
       .inline {
         display: inline;
+      }
+
+      .sidebar {
+        width: 25vw;
+        font-size: 0.5rem;
       }
     </style>
   </head>
@@ -88,7 +97,7 @@
       </ul>
     <![endif]-->
     <div class="flex-row">
-      <section class="m1">
+      <section class="p1 scroll-y sidebar">
         <h5>table of contents</h5>
         <nav x-side-show-toc></nav>
       </section>
