@@ -67,8 +67,15 @@ function createTOC() {
         const li = document.createElement('li')
         a.href = slide.href
         a.innerText = slide.title
+        a.addEventListener("click", handleClick)
         li.appendChild(a)
         ol.appendChild(li)
+
+        function handleClick(e) {
+          e.preventDefault()
+          setCurrentSlideIndex(slideIndex)
+          return false
+        }
       }
     }
   }
