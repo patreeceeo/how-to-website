@@ -3,22 +3,22 @@
   font-size: var(--fluid-unit);
 }
 h1 {
-  font-size: var(--scale-6);
+  font-size: var(--scale-1);
 }
 h2 {
-  font-size: var(--scale-5);
+  font-size: var(--scale-6);
 }
 h3 {
-  font-size: var(--scale-4);
+  font-size: var(--scale-5);
 }
 h4 {
-  font-size: var(--scale-3);
+  font-size: var(--scale-4);
 }
 h5 {
-  font-size: var(--scale-2);
+  font-size: var(--scale-3);
 }
 h6 {
-  font-size: var(--scale-1);
+  font-size: var(--scale-2);
 }
 
 h1, h2, h3, h4, h5, h6, p {
