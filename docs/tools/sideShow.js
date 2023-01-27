@@ -15,9 +15,28 @@ function handleLoad() {
   chapterRootElements = findChapterRootElements();
   slideRootElements = findSlideRootElements();
   slideFrames = findSlideFrames(slideRootElements);
+  for(const el of slideRootElements) {
+    originalDisplay.set(el, el.style.display)
+  }
+  for(const frame of slideFrames) {
+    for(const el of frame) {
+      originalDisplay.set(el, el.style.display)
+    }
+  }
   addEventListeners();
   update();
   createTOC();
+  splash();
+}
+
+function splash() {
+  const el = document.querySelector("[x-side-show-splash]")
+  if(el) {
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.remove()
+    }, 1000)
+  }
 }
 
 function createTOC() {
@@ -227,6 +246,9 @@ function prevFrameOrSlide() {
   }
 }
 
+/** @type Map<HTMLElement, string> */
+const originalDisplay = new Map()
+
 /**
   * @param el {HTMLElement}
   * @param visible {boolean} */
@@ -234,7 +256,7 @@ function setElementVisibility(el, visible) {
   Object.assign(
     el.style,
     visible
-    ? { display: "block", visibility: "visible" }
+    ? { display: originalDisplay.get(el), visibility: "visible" }
     : { display: "none", visibility: "hidden" }
   )
 }

@@ -43,14 +43,9 @@
         width: 100%;
       }
 
-      ul, li {
+      li {
         list-style-type: "💥";
         text-indent: 0.5rem;
-      }
-
-      /* Put your CSS here */
-      [x-side-show-slide] {
-        display: none;
       }
 
       .slide-with-notes {
@@ -101,6 +96,15 @@
         padding: 0.5rem;
       }
 
+      .splash {
+        position: fixed;
+        width: 100vw;
+        height: 100vw;
+        z-index: 999;
+        background-color: white;
+        transition: opacity 1s linear;
+      }
+
     </style>
   </head>
   <body>
@@ -132,6 +136,7 @@
         </li>
       </ul>
     <![endif]-->
+    <div class="splash" x-side-show-splash></div>
     <div class="flex-row">
       <section class="p1 sidebar">
         <h5>table of contents</h5>
