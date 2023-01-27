@@ -86,24 +86,32 @@ function getCurrentFrameIndexFromLocation() {
     ? parseInt(/** @type string */ (params.get("frame")))
     : 0;
 }
+
+
 /** @param index {number} */
 function setCurrentSlideIndex(index) {
   if (index !== currentSlideIndex) {
     currentSlideIndex = index;
     currentFrameIndex = 0;
+    const url = new URL(location)
     const params = new URLSearchParams(location.search);
     params.set("slide", index.toString());
     params.set("frame", "0");
-    location.search = params.toString();
+    url.search = params.toString()
+    window.history.pushState({}, "", url)
+    update()
   }
 }
 /** @param index {number} */
 function setCurrentFrameIndex(index) {
   if (index !== currentFrameIndex) {
     currentFrameIndex = index;
+    const url = new URL(location)
     const params = new URLSearchParams(location.search);
     params.set("frame", index.toString());
-    location.search = params.toString();
+    url.search = params.toString()
+    window.history.pushState({}, "", url)
+    update()
   }
 }
 
@@ -173,7 +181,7 @@ function addEventListeners() {
 
   const originalUrl = new URL(location.toString())
 
-  window.addEventListener("locationchange", (e) => {
+  window.addEventListener("popstate", (e) => {
     const currentUrl = new URL(location.toString())
     if(currentUrl.origin === originalUrl.origin) {
       e.preventDefault()
@@ -236,6 +244,8 @@ function update() {
   if(elDisplayChapterTitle) {
     elDisplayChapterTitle.innerText = slideRootElements[currentSlideIndex].parentElement.getAttribute('title')
   }
+
+  window.scrollY = 0
 }
 
 /**
