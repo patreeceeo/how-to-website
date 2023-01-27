@@ -212,21 +212,23 @@ function prevFrameOrSlide() {
   }
 }
 
+/**
+  * @param el {HTMLElement}
+  * @param visible {boolean} */
+function setElementVisibility(el, visible) {
+  Object.assign(
+    el.style,
+    visible
+    ? { opacity: 1, visibility: "visible" }
+    : { opacity: 0, visibility: "hidden" }
+  )
+}
+
 function update() {
   for (const [slideIndex, slideElement] of slideRootElements.entries()) {
-    Object.assign(
-      slideElement.style,
-      slideIndex === currentSlideIndex
-        ? { display: "block", visibility: "visible" }
-        : { display: "none", visibility: "hidden" }
-    );
+    setElementVisibility(slideElement, slideIndex === currentSlideIndex)
     for (const [frameIndex, frameElement] of getSlideFrames(slideIndex).entries()) {
-      Object.assign(
-        frameElement.style,
-        frameIndex < currentFrameIndex
-        ? { display: "block", visibility: "visible" }
-        : { display: "none", visibility: "hidden" }
-      );
+      setElementVisibility(frameElement, frameIndex < currentFrameIndex)
     }
   }
 
