@@ -286,7 +286,7 @@ function update() {
     elDisplayChapterTitle.innerText = slideRootElements[currentSlideIndex].parentElement.getAttribute('title')
   }
 
-  window.scrollY = 0
+  window.scroll(0,0)
 }
 
 /**
