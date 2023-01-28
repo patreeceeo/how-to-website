@@ -166,6 +166,7 @@
   /** @param el {HTMLElement}
     */
   function addElement(el) {
+    el.setAttribute('x-grabby-hand', "true")
     el.addEventListener("mousedown", handleMouseDown);
     _addedElements.push(el)
     if(!positionTypes.some(hasPositionType.bind(null, el))) {
@@ -296,6 +297,7 @@
   }
 
   /** @type any */(window).grabbyHand = {
+    addElement,
     getStyle,
     copyStyle,
     setActiveElement,
