@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TODO</title>
-    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/reset.css"/>
     <link rel="stylesheet" href="styles/fluid.css" />
     <link rel="stylesheet" href="styles/modular-scale.css" />
     <link rel="stylesheet" href="styles/typography.css" />
@@ -400,42 +400,72 @@
           </div>
           <div x-side-show-slide>
             <h2>positioning</h2>
+            <p>flavors include</p>
+            <ul>
+              <li>static</li>
+              <li>relative</li>
+              <li>absolute</li>
+              <li>fixed</li>
+            </ul>
             <p>problem: once again, visual task, verbal interface</p>
-            <div x-side-show-frame>
-              <p>a partial solution: transform tool</p>
-              <img
-                  src="images/frog.png"
-                  alt="frog"
-                  class="absolute"
-                  x-grabby-hand=""
-                  style="width: 2em"
-                  />
-              <img
-                  src="images/frog.png"
-                  alt="frog"
-                  class="absolute"
-                  x-grabby-hand=""
-                  style="width: 4em"
-                  />
-            </div>
+            <p>not ideal solution: elements panel of devtools</p>
+            <p x-side-show-frame>a WIP solution: transform tool</p>
+            <img
+                src="images/frog.png"
+                alt="frog"
+                style="width: 2em"
+                />
+            <img
+                src="images/frog.png"
+                alt="frog"
+                style="width: 4em"
+                />
           </div>
         </side-show-chapter>
         <side-show-chapter title="ship it!">
           <div x-side-show-slide>
             <h2>Introducing Git SCM and GitHub</h2>
+            <p>Git can</p>
+            <ul>
+              <li>keep track of changes to files</li>
+              <li>share those files (and changes)</li>
+              <li>undo specific changes</li>
+              <li>merge changes</li>
+              <li>...and more!</li>
+            </ul>
+            <p>Git concepts</p>
+            <ul>
+              <li>repositories</li>
+              <li>commits</li>
+              <li>branches</li>
+              <li>...deep rabbithole</li>
+            </ul>
           </div>
           <div x-side-show-slide>
-            <h2>CLI v GUI</h2>
-            <p>problem: command line</p>
-            <p x-side-show-frame>solution: GitHub Desktop</p>
-          </div>
-          <div x-side-show-slide>
-            <h2>Git with the program</h2>
+            <h2>Git with the program!</h2>
             <p>problem: hard to think about multiple things at once.</p>
-            <p x-side-show-frame>solution: take small, focused steps</p>
+            <p>problem: I realized I made a mistake.</p>
+            <p x-side-show-frame>solution: commit often and with focused intention</p>
+          </div>
+          <div x-side-show-slide>
+            <div class="slide-with-notes">
+              <h2>CLI v GUI</h2>
+              <p>problem: command line isn't the most human-friendly interface</p>
+              <p x-side-show-frame>solution: <a href="https://desktop.github.com/">GitHub Desktop</a></p>
+            </div>
+            <div class="notes">
+              Though the CLI is where Git's full power lies, for the most common tasks, a GUI is really, really nice.
+            </div>
           </div>
           <div x-side-show-slide>
             <h2>GitHub Pages</h2>
+            <p>Steps</p>
+            <ol>
+              <li>Sign up (if necessary)</li>
+              <li>Create a repo</li>
+              <li>Push</li>
+              <li>Go to settings &gt; pages</li>
+            </ol>
           </div>
           <div x-side-show-slide>
             <h2>Custom domain</h2>
