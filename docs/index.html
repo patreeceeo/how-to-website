@@ -48,6 +48,14 @@
         text-indent: 0.5rem;
       }
 
+      pre {
+        text-indent: 0;
+        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+        background-color: lightgrey;
+        padding: 1rem;
+        white-space: pre-wrap;
+      }
+
       .slide-with-notes {
         width: var(--width-slide-with-notes);
       }
@@ -242,12 +250,12 @@
           </div>
           <div x-side-show-slide>
             <h2>KISS</h2>
-            <p>💋</p>
+            <p x-side-show-frame>💋</p>
           </div>
           <div x-side-show-slide>
             <h2>Our workbench:</h2>
             <ul>
-              <li x-side-show-frame>VSCode</li>
+              <li x-side-show-frame><a href="https://code.visualstudio.com/download">VSCode</a></li>
               <li x-side-show-frame>Chrome devtools</li>
             </ul>
           </div>
@@ -255,10 +263,56 @@
         <side-show-chapter title="Jump to hypertext">
           <div x-side-show-slide>
             <h2>Introducing HTML</h2>
-            <p>version 5</p>
+            <ul>
+              <li>necessary container for more exciting stuff</li>
+              <li>just semantics</li>
+              <li x-side-show-frame>also, presentation (sorry CSS)</li>
+              <li x-side-show-frame>also, behavior (sorry JavaScript)</li>
+              <li>latest version: 5</li>
+            </ul>
+            <p>some interesting tags/elements</p>
+            <ul>
+              <li x-side-show-frame>
+                anchors (AKA links), e.g.
+                <div x-ht-snippet><a href="https://www.alwayspets.com/s/hilarious-cat-memes-ac9324d114604420">we haz teh memes</a></div>
+              </li>
+              <li x-side-show-frame>
+                headers, e.g.
+                <div x-ht-snippet>
+                  <h1>Main header</h1>
+                  <h2>Subheader</h2>
+                </div>
+              </li>
+              <li x-side-show-frame>
+                paragraphs, e.g.
+                <div x-ht-snippet>
+                  <p>
+                    lorem ipsum
+                  </p>
+                </div>
+              </li>
+              <li x-side-show-frame>
+                images, e.g.
+                <div x-ht-snippet>
+                  <img
+                      src="images/frog.png"
+                      alt="frog"
+                      style="height: 8rem"
+                  />
+                </div>
+              </li>
+              <li x-side-show-frame>
+                even marquees?
+                <div x-ht-snippet>
+                  <marquee>the 90s called they want their html back!!!</marquee>
+                </div>
+              </li>
+            </ul>
           </div>
           <div x-side-show-slide>
-            <h2>HTML5 Boilerplate</h2>
+            <h2>Cheat code</h2>
+            <a href="/html.html">get it here</a>
+            <div class="notes">Also pejoratively known as "boilerplate"</div>
           </div>
           <div x-side-show-slide>
             <h2>tool!</h2>
@@ -376,6 +430,7 @@
       <script src="tools/sideShow.js" type="module"></script>
       <script src="tools/grabby-hand.js"></script>
       <script src="tools/fileTool.js"></script>
+      <script src="tools/htSnippet.js"></script>
       <script type="text/javascript">
         /* Put your JavaScript here */
       </script>
