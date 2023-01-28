@@ -127,6 +127,7 @@ function setCurrentSlideIndex(index) {
     url.search = params.toString()
     window.history.pushState({}, "", url)
     update()
+    window.scroll(0,0)
   }
 }
 /** @param index {number} */
@@ -285,8 +286,6 @@ function update() {
   if(elDisplayChapterTitle) {
     elDisplayChapterTitle.innerText = slideRootElements[currentSlideIndex].parentElement.getAttribute('title')
   }
-
-  window.scroll(0,0)
 }
 
 /**
