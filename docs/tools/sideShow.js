@@ -8,6 +8,7 @@ let chapterRootElements = [];
 let slideRootElements = [];
 /** @type Array<Array<HTMLElement>> */
 let slideFrames = [];
+let editingContent = false;
 
 function handleLoad() {
   currentSlideIndex = getCurrentSlideIndexFromLocation();
@@ -200,7 +201,7 @@ function addEventListeners() {
 
   document.body.addEventListener("keydown", (e) => {
     const handler = keyMap[e.code]
-    if(handler) {
+    if(handler && !editingContent) {
       handler()
     }
   })
@@ -214,6 +215,17 @@ function addEventListeners() {
       currentSlideIndex = getCurrentSlideIndexFromLocation();
       update()
       window.screenY = 0
+    }
+  })
+
+  document.addEventListener("focusin", (e) => {
+    if(/** @type HTMLElement */(e.target).isContentEditable) {
+      editingContent = true
+    }
+  })
+  document.addEventListener("focusout", (e) => {
+    if(/** @type HTMLElement */(e.target).isContentEditable) {
+      editingContent = false
     }
   })
 }
