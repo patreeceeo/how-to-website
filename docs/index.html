@@ -114,6 +114,17 @@
         transition: opacity 1s linear;
       }
 
+      .eg-parent-1 {}
+      .eg-parent-2 {}
+      .eg-parent-1.eg-parent-2 {}
+
+      .eg-parent-1 .eg-child {}
+      .eg-parent-2 .eg-child {}
+      .eg-parent-1.eg-parent-2 .eg-child {}
+
+      .eg-parent-1, .eg-parent-2, .eg-child {
+      }
+
     </style>
   </head>
   <body>
@@ -277,52 +288,57 @@
         </side-show-chapter>
         <side-show-chapter title="Jump to hypertext">
           <div x-side-show-slide>
-            <h2>Introducing HTML</h2>
-            <ul>
-              <li>necessary container for more exciting stuff</li>
-              <li>just semantics</li>
-              <li x-side-show-frame>also, presentation (sorry CSS)</li>
-              <li x-side-show-frame>also, behavior (sorry JavaScript)</li>
-              <li>latest version: 5</li>
-            </ul>
-            <p>some interesting tags/elements</p>
-            <ul>
-              <li x-side-show-frame>
-                anchors (AKA links), e.g.
-                <div x-ht-snippet><a href="https://www.alwayspets.com/s/hilarious-cat-memes-ac9324d114604420">we haz teh memes</a></div>
-              </li>
-              <li x-side-show-frame>
-                headers, e.g.
-                <div x-ht-snippet>
-                  <h1>Main header</h1>
-                  <h2>Subheader</h2>
-                </div>
-              </li>
-              <li x-side-show-frame>
-                paragraphs, e.g.
-                <div x-ht-snippet>
-                  <p>
+            <div class="slide-with-notes">
+              <h2>Introducing HTML</h2>
+              <ul>
+                <li>necessary container for more exciting stuff</li>
+                <li>just semantics</li>
+                <li x-side-show-frame>also, presentation (sorry CSS)</li>
+                <li x-side-show-frame>also, behavior (sorry JavaScript)</li>
+                <li>latest version: 5</li>
+              </ul>
+              <p>some interesting tags/elements</p>
+              <ul>
+                <li x-side-show-frame>
+                  anchors (AKA links), e.g.
+                  <div x-ht-snippet><a href="https://www.alwayspets.com/s/hilarious-cat-memes-ac9324d114604420">we haz teh memes</a></div>
+                </li>
+                <li x-side-show-frame>
+                  headers, e.g.
+                  <div x-ht-snippet>
+                    <h1>Main header</h1>
+                    <h2>Subheader</h2>
+                  </div>
+                </li>
+                <li x-side-show-frame>
+                  paragraphs, e.g.
+                  <div x-ht-snippet>
+                    <p>
                     lorem ipsum
-                  </p>
-                </div>
-              </li>
-              <li x-side-show-frame>
-                images, e.g.
-                <div x-ht-snippet>
-                  <img
-                      src="images/frog.png"
-                      alt="frog"
-                      style="height: 8rem"
-                  />
-                </div>
-              </li>
-              <li x-side-show-frame>
-                even <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee">marquees! (jk)</a>
-                <div x-ht-snippet>
-                  <marquee>the 90s called they want their html back!!!</marquee>
-                </div>
-              </li>
-            </ul>
+                    </p>
+                  </div>
+                </li>
+                <li x-side-show-frame>
+                  images, e.g.
+                  <div x-ht-snippet>
+                    <img
+                        src="images/frog.png"
+                        alt="frog"
+                        style="height: 8rem"
+                        />
+                  </div>
+                </li>
+                <li x-side-show-frame>
+                  even <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee">marquees! (jk)</a>
+                  <div x-ht-snippet>
+                    <marquee>the 90s called they want their html back!!!</marquee>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="notes">
+              Note there's these things called "attributes"
+            </div>
           </div>
           <div x-side-show-slide>
             <div class="slide-with-notes">
@@ -332,16 +348,40 @@
             <div class="notes">Also pejoratively known as "boilerplate"</div>
           </div>
           <div x-side-show-slide>
-            <h2>tool!</h2>
-            <p>problem: visual task, verbal interface</p>
-            <p x-side-show-frame>solution: edit in the browser!</p>
-            <p>idk I'm hungry</p>
-            <img src="/images/burrito.jpg" style="width: 8rem">
+            <div class="slide-with-notes">
+              <h2>tool!</h2>
+              <p>problem: visual task, verbal interface</p>
+              <p x-side-show-frame>solution: edit in the browser!</p>
+              <p>idk I'm hungry</p>
+              <img src="/images/burrito.jpg" style="width: 8rem">
+            </div>
+            <div class="notes">Take note of that style attribute</div>
           </div>
         </side-show-chapter>
         <side-show-chapter title="The Style of Elements">
           <div x-side-show-slide>
-            <h2>Introducing CSS</h2>
+            <div class="slide-with-notes">
+              <h2>Introducing CSS</h2>
+              <div class="eg-child">
+                I'm less specific
+              </div>
+              <div class="eg-parent-1 eg-parent-2">
+                I'm more specific
+              </div>
+              <div class="eg-parent-1">
+                I'm a parent
+                <div class="eg-parent-2">
+                  I'm a child and a parent (and more specific)
+                  <div class="eg-child">
+                    I'm a child (and most specific on this page)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="notes">
+              Builds on HTML style attribute to determine the way elements are presented in a more powerful way.
+            </div>
+            </ul>
           </div>
           <div x-side-show-slide>
             <h2>default styles</h2>
